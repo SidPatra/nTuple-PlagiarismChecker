@@ -1,0 +1,29 @@
+Assumptions made in this program:
+1. All inputs possible: syns.txt, file1.txt, file2.txt (all composed of space separated words of type string,
+    required inputs), and 'n' (optional input given in command line, has to be a positive integer greater than 0)
+2. All outputs possible:
+	Best case: single percentage (rounded to nearest integer) indicating how similar file1.txt and file2.txt are (e.g: 100%)
+	Worse case: TupleSize is reset to <min(len(file1),len(file2)), or 3> as default/inputted 'n' is too large for
+	    one of the given files/can't be less than 0 percentage value
+	Worse case: Program failed as at least one of the given files contains no information
+	Worse case: syns.txt/file1.txt/file2.txt not found
+		    Program failed as required files do not exist
+	Worst case: syns.txt not found
+		    file1.txt not found
+		    file2.txt not found
+		    Program failed as required files do not exist
+	All outputs printed in command line/console
+3. file1.txt and file2.txt both have the same number of words, but the program has special cases where it will check if
+    they are of different lengths, and make appropriate adjustments.
+4. All given files must have contain at least one word. If a file is found to create nothing, then program will fail.
+5. The value of 'n' exists in the following range: 0 < n <= number of words in file1.txt == number of
+    words in file2.txt. If 'n' does not meet these requirements, it will be reset to 3.
+6. If the number of words in at least one of those files is less than the default 'n' of 3, then 'n' will
+    be set to the number of words in the file with fewer words (if user inputs a number bigger than that). If user inputs a smaller integer number, that will be permitted.
+7. Similarity check: all tuples that the input files are composed of are the exact same order - tuples1 and tuples2 will
+    not get checked for rearrangements of letters or tuples unless each file is composed of a different number of n-tuples.
+8. Percentage similarity finding: both file1.txt and file2.txt are assumed to contain the same number of space-separated
+    words, and therefore the same number of 'n'd-strings, so percentage is found by dividing number of similarities
+    by number of elements in tuples1 (the tuple of strings for file1.txt). If they do not have the same length, than it
+    will be calculated using the length of whichever is smaller in length: tuples1 or tuples2.
+
