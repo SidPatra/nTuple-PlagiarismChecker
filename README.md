@@ -101,5 +101,5 @@ Overall runtime (for files of equal number of words, n = 3 != f1 != f2 (aka idea
                 (for files of unequal number of words...): O(f1 * f2) <- this case is not expected to happen, can still be handled
 
 Space usage: taking s for syns.txt, f1 for file1.txt, f2 for file2.txt:
-    total space usage is: s + f1 + f2 + (f1-(n-1)) + (f2-(n-1))
-                                            ^ tuple1   ^ tuple2
+	total space usage is: s + f1 + f2 + (f1-(n-1)) + (f2-(n-1))
+						^ tuple1   ^ tuple2
