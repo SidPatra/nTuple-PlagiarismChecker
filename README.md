@@ -72,26 +72,34 @@ How it works:
 Other notes:
 a) Instead of replacing all mentions of a synonym, it is possible to go through each string in tuple1 and tuple2 to check
     if any string contained a synonym, but I wished to show better understanding and not be dependent on in-built functions.
+
 b) I made several alternative instructions in case the number of words in file1.txt and file2.txt were different. To
     speed up overall worst case run-time, these precautions can be removed, but will open the program up to encountering
     errors.
+
 c) I also made use of try-except and other conditional statements to make sure that the inputs were as per my assumptions.
     Removing these would not effect the run-time significantly, but will also open the program up to encountering errors.
+
 d) There are a few steps within this program that could have been replaced with numpy functions. I chose to not use these
     to keep the program simple and 'import-free'. For example, similarities(t1,t2) does not need to exist, as there is a
     numpy function that can perform its task.
+
 e) Comparing more than two files: Because of how the code is set up, if all files to be checked are of same size and
     appropriate modifications are made (additional tuples (tuple3, tuple4, etc.), then time complexity would stay
     approximately the same (additional equality-checks needed for each additional tuple in similarities(t1,t2,...).
     If number of words in each file is different, additional for-loops will be required, multiplying O-time by the size
     of each new file being handled.
+
 f) All the inputs being taken are .txt files. To check websites, for example, .html files need to be
     taken as inputs or at least parsed through and converted into .txt files to only account for text (without any
     website formatting). The same can be said about pdfs and other file types. Directly taking a non-.txt file into this
     program would not be wise, as it is not built to handle non-plain-text documents.
+
 g) Code needs to be edited if files are not called syns.txt, file1.txt, or file2.txt
+
 Overall runtime (for files of equal number of words, n = 3 != f1 != f2 (aka ideal case): O(f+f+f+fn) -> O(fn)
                 (for files of unequal number of words...): O(f1 * f2) <- this case is not expected to happen, can still be handled
+
 Space usage: taking s for syns.txt, f1 for file1.txt, f2 for file2.txt:
     total space usage is: s + f1 + f2 + (f1-(n-1)) + (f2-(n-1))
                                             ^ tuple1   ^ tuple2
